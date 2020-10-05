@@ -1,4 +1,5 @@
 const utils = require("../utils.js");
+const roster = require("../roster.js")
 module.exports = {
     name: 'eval',
     description: 'Debug Command',
