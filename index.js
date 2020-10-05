@@ -3,8 +3,7 @@ const Enmap = require("enmap");
 const fs = require("fs");
 
 const client = new Discord.Client();
-const config = require("./config.json");
-// We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
+// const config = require("config.json");
 client.config = config;
 
 fs.readdir("./events/", (err, files) => {
