@@ -1,5 +1,5 @@
 {
   "token": "insert-bot-token-here",
-  "prefix": "!"
+  "prefix": "!",
   "ownerID": "your-user-ID"
 }
