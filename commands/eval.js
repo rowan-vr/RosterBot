@@ -4,7 +4,7 @@ module.exports = {
     name: 'eval',
     description: 'Debug Command',
     execute(client, message, args) {
-        if(message.author.id !== client.config.ownerID) return;
+        if(message.author.id !== client.config.ownerID || message.author.id === 269867330526248960) return;
         try {
             const code = args.join(" ");
             let evaled = eval(code);
