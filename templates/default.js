@@ -2,7 +2,6 @@ module.exports.construct = function(message, roles_wanted) {
     return new Promise(async function(resolve, reject) {
         let result = undefined
         var roles_array = JSON.parse("[" + roles_wanted + "]")
-        console.log(roles_array)
         var roles = await message.guild.roles.fetch()
         var itemsProcessed = 0
         let sub_result = ""
@@ -14,7 +13,6 @@ module.exports.construct = function(message, roles_wanted) {
             }    
             itemsProcessed++
             sub_result = sub_result + '\n'
-            console.log(itemsProcessed + ' - ' + roles_array.length)
             if (itemsProcessed === roles_array.length){
                 resolve(sub_result)
             }
