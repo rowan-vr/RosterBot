@@ -9,7 +9,7 @@ module.exports.message = function(template, message, roles) {
             return message.channel.send("This template has not been found!") 
         } else {
         const template = require('./templates/' + file);
-        template.construct(message, roles).then(m => {
+        template.construct(message.guild, roles).then(m => {
             message.channel.send(m)
         })}
     })
