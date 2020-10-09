@@ -1,6 +1,10 @@
-module.exports.construct = function(guild, roles_wanted) {
+module.exports.construct = (guild, roles_wanted) => {
     return new Promise(async function(resolve, reject) {
-        var roles_array = JSON.parse("[" + roles_wanted + "]")
+        try{
+            var roles_array = JSON.parse("[" + roles_wanted + "]")
+        } catch(e){
+            return reject("The roles you supplied are invalid, make sure you use the role ID's seperated by a comma")
+        }
         var roles = await guild.roles.fetch()
         var itemsProcessed = 0
         let sub_result = ""
