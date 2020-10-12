@@ -15,3 +15,11 @@ module.exports.message = (template, guild, roles) => {
         })
     })
 }
+module.exports.getTemplates = () => {
+    return new Promise(function(resolve,reject){
+        fs.readdir("./templates/", (err, files) => {
+            if (err) return reject(err);
+            resolve(files)
+        })
+    })
+}
