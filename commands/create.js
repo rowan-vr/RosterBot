@@ -6,6 +6,7 @@ module.exports = {
     name: 'create',
     description: 'Create a roster',
     execute(client, message, args) {
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("You do not have the required permission to use this command. If you believe this is a mistake contact your server administrator.")
         if(args.length == 0) {
             message.delete()
             GUI(message)
@@ -108,7 +109,7 @@ function GUI(message){
         i = 0
         var role_message = "**__Choose the roles!__**\n_Reply with the numbers in correct order sperated with a comma, for example `4,2,5,7`\n_"
         for (role of roles) {
-            console.log(role)
+            // console.log(role)
             if (role.name === '@everyone') role_message += `**${i+1}** - \`@everyone\`\n`; else role_message += `**${i+1}** - ${role.name}\n`
             // console.log(templates_message)
             i++;
@@ -157,7 +158,7 @@ function GUI(message){
                 reject("You have chosen to abort the roster creation")
             } else {
                 m4.delete()
-                reject("I dunno what this mean man.............. Im going to crash now...........")
+                reject("I dunno what this means man.............. Im going to crash now...........")
             }
         })
         .catch(e => {

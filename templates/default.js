@@ -10,7 +10,7 @@ module.exports.construct = (guild, roles_wanted) => {
         let sub_result = ""
         for (element of roles_array){
             const role = await roles.cache.find(r => r.id == element)
-            sub_result =  sub_result + role.name + '\n'
+            sub_result =  sub_result + `**` + role.name + '**\n'
             for (member of role.members) sub_result = sub_result + '- <@' + member[1].id + '> \n'
             itemsProcessed++
             sub_result = sub_result + '\n'
